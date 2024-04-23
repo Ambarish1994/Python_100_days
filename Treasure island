@@ -1,12 +1,12 @@
-print("welcome to treasure island")
+rint("welcome to treasure island")
 print("Your mission is to find the treasure!!")
 
-choice1 = input("you are at a crossroad, where do you want to go. right or left?")
+choice1 = input("you are at a crossroad, where do you want to go. right or left?").lower()
 
 if choice1 == "left":
-  choice2 = input("you have reached a lake, do you want to swim or wait for a boat?")
+  choice2 = input("you have reached a lake, do you want to swim or wait for a boat?").lower()
   if choice2 == "wait":
-    choice3 = input("you have reached a house with 3 doors, which one do you want to open. Red, Blue or Yellow?")
+    choice3 = input("you have reached a house with 3 doors, which one do you want to open. Red, Blue or Yellow?").lower()
     if choice3 == "yellow":
       print("you have found the treasure")
     else:
