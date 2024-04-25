@@ -1,0 +1,13 @@
+names = names_string.split(", ")
+
+import random
+# to determine the number of names in the input
+num_items = len(names)
+
+# generating a random int taking into account the number of names
+random_Choice = random.randint(0,num_items-1)
+
+# Pulling random name from the list of names
+unlucky = names[random_Choice]
+
+print(f"{unlucky} is going to buy the meal today!")
