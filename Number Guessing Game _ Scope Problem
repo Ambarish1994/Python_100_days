@@ -1,0 +1,70 @@
+import art
+
+print(art.logo)
+import random
+
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 100.")
+def guess_number():
+  number = random.randint(1,100)
+  return number
+
+random_guess = guess_number()
+print(f"hint:psst the number is {random_guess}")
+mode = input("Choose a difficulty. Type 'easy' or 'hard':")
+
+  
+def easy_mode():
+  global attempts
+  print(f"You have {attempts} attempts remaining to guess the number.")
+  
+  for i in range(attempts):
+    guess = int(input("Make a guess:"))
+    if guess == random_guess:
+      print(f"You got it! The answer was {random_guess}")
+      print("You have won")
+      return
+    else:
+      attempts -= 1
+      if guess > random_guess:
+        print("Too high.")
+        print(f"You have {attempts} attempts remaining to guess the number.")
+        print("Guess again.")
+      elif guess < random_guess:
+        print("Too low.")
+        print(f"You have {attempts} attempts remaining to guess the number.")
+        print("Guess again.")
+      if attempts == 0:
+        print("You've run out of guesses, you lose.")
+        return
+
+def hard_mode():
+  global attempts
+  print(f"You have {attempts} attempts remaining to guess the number.")
+  for i in range(attempts):
+    guess = int(input("Make a guess:"))
+    if guess == random_guess:
+      print(f"You got it! The answer was {random_guess}")
+      print("You have won")
+      return
+    else:
+      attempts -= 1
+      if guess > random_guess:
+        print("Too high.")
+        print(f"You have {attempts} attempts remaining to guess the number.")
+        print("Guess again.")
+      elif guess < random_guess:
+        print("Too low.")
+        print(f"You have {attempts} attempts remaining to guess the number.")
+        print("Guess again.")
+      if attempts == 0:
+        print("You've run out of guesses, you lose.")
+        return
+
+  
+if mode == "easy":
+  attempts = 10
+  easy_mode()
+else:
+  attempts = 5
+  hard_mode()
